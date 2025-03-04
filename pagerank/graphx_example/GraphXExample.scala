@@ -15,7 +15,7 @@ object GraphXExample {
     val graph = GraphLoader.edgeListFile(sc, "edges.txt")
 
     // Run PageRank algorithm
-    val ranks = graph.pageRank(0.01).vertices
+    val ranks = graph.staticPageRank(10).vertices
 
     // Load vertices with names (assuming CSV format: "vertexId,name")
     val users = sc.textFile("vertices.txt").map { line =>
